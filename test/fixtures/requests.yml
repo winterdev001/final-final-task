@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  feedback: MyString
+  status: 1
+  worker: one
+  company: one
+
+two:
+  content: MyString
+  feedback: MyString
+  status: 1
+  worker: two
+  company: two

@@ -1,0 +1,7 @@
+{
+  "name": "xtramiler",
+  "private": true,
+  "dependencies": {
+    "animate.css": "^3.7.2"
+  }
+}

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  deadline: 2019-11-26 22:27:46
+  amount: 1
+  status: MyString
+  type: 
+  location: MyString
+  remote: false
+  description: MyString
+  company: one
+
+two:
+  title: MyString
+  deadline: 2019-11-26 22:27:46
+  amount: 1
+  status: MyString
+  type: 
+  location: MyString
+  remote: false
+  description: MyString
+  company: two

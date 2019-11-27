@@ -1,0 +1,36 @@
+<%= form_with(model: application, local: true, html: { multipart: true }) do |form| %>
+  <% if application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+      <ul>
+      <% application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+   <div class="field">
+    <%= form.label  'Upload your Cv here' %>
+    <%= form.file_field :image ,placeholder:'Upload your Cv' %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :Link %>
+    <%= form.text_field :content,placeholder:'Enter brief description' %>
+  </div>
+ 
+  <div class="field">   
+    <%= form.hidden_field  :worker_id , value:current_worker.id%>
+  </div>
+
+  <div class="field">   
+    <%= form.hidden_field  :company_id , value:@company_id %>    
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

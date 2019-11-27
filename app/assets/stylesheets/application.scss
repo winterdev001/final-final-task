@@ -1,0 +1,385 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .want_job {
+   background-color: #fdab44 !important;
+ }
+
+ .nav-link {
+   margin: 1rem !important;
+   color: white !important;
+ }
+ .navbar-brand {
+   color: white !important;
+ }
+
+ 
+ .hero-wrap {
+  background-image: url('bg_1.jpg');
+  width: 100%;
+  height: 800px;
+  position: relative; 
+  
+}
+.layer {
+  background-color:  #a16ae8b0 !important;
+  position: absolute;
+  width: 100%;
+  height: 800px;
+}
+
+  @media (max-width: 991.98px) {
+    .hero-wrap {
+      height: 900px; } }
+  .hero-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .8;
+    background: #000000;
+    background: #207dff;
+    background: -moz-linear-gradient(left, #207dff 0%, #a16ae8 100%)!important ;
+    background: -webkit-gradient(left top, right top, color-stop(0%, #207dff), color-stop(100%, #a16ae8)) !important ;
+    background: -webkit-linear-gradient(left, #207dff 0%, #a16ae8 100%) !important ;
+    background: -o-linear-gradient(left, #207dff 0%, #a16ae8 100%)!important ;
+    background: -ms-linear-gradient(left, #207dff 0%, #a16ae8 100%)!important ;
+    background: -webkit-gradient(linear, left top, right top, from(#207dff), to(#a16ae8))!important ;
+    background: linear-gradient(to right, #207dff 0%, #a16ae8 100%) !important ;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207dff', endColorstr='#a16ae8', GradientType=1 ); }
+  .hero-wrap .slider-text {
+    height: 800px;
+    z-index: 0;
+    overflow: hidden; }
+    @media (max-width: 991.98px) {
+      .hero-wrap .slider-text {
+        text-align: center;
+        height: 900px; } }
+    .hero-wrap .slider-text .subheading {
+      color: #000000;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      display: inline-block;
+      color: #000000; }
+    .hero-wrap .slider-text .text {
+      position: relative;
+      z-index: 1; }
+    .hero-wrap .slider-text h1 {
+      font-size: 54px;
+      color: #fff;
+      line-height: 1.2;
+      font-weight: 400; }
+      .hero-wrap .slider-text h1 span {
+        font-weight: 700; }
+      @media (max-width: 991.98px) {
+        .hero-wrap .slider-text h1 {
+          font-size: 50px; } }
+      @media (max-width: 767.98px) {
+        .hero-wrap .slider-text h1 {
+          font-size: 40px; } }
+    .hero-wrap .slider-text p {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 400; }
+      .hero-wrap .slider-text p .number {
+        color: #fdab44; }
+    .hero-wrap .slider-text .btn-custom {
+      color: #fff;
+      background: #206dfb;
+      padding: 10px 20px; }
+  .hero-wrap.hero-wrap-2 {
+    height: 400px !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center; }
+    @media (max-width: 1199.98px) {
+      .hero-wrap.hero-wrap-2 {
+        background-position: top center !important; } }
+    .hero-wrap.hero-wrap-2 .slider-text {
+      height: 400px !important; }
+      @media (max-width: 991.98px) {
+        .hero-wrap.hero-wrap-2 .slider-text {
+          text-align: center;
+          height: 400px !important; }
+    }
+
+    .navbar {
+      position: fixed !important;
+      top: 0px;
+      width: 100%;
+      transition: padding 300ms ease;
+    }
+    
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.562);
+  border-bottom: 1px solid  rgba(128, 128, 128, 0.541) !important;
+  
+}
+.changed-links {
+  color: black !important
+}
+
+.post-job {
+  color: white !important;
+}
+.brand {
+  color: black !important
+}
+
+.intro {
+  margin-top: 9rem;
+}
+
+.intro-content-1 {
+  font-size: 20px;
+}
+
+.intro-content-2 {
+  font-size: 45px;
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$cub: cubic-bezier(.73,.14,.4,1.58);
+$step1: 0.2s;
+$step2: 0.4s;
+$delayClose1: 0.2s;
+$delayClose2: 0.4s;
+$totalAnim: $step1 + $step2;
+$w: 20rem;
+$h: 3rem;
+$borderW: 0.3rem;
+
+.search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: $w/-2;
+  margin-top: $h/-2;
+  width: $w;
+  height: $h;
+
+  &__border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $h;
+    height: 100%;
+    border: $borderW solid #fff;
+    border-radius: 10rem;
+    transform: translate(-50%, -50%);
+    transition: width $step2 $delayClose2;
+    
+    #trigger:checked ~ & {
+      transition: width $step2 $step1;
+      width: 100%;
+      
+      &:after {
+        width: 0;
+        transition: width $step1 cubic-bezier(.42,-0.7,.62,1.25);
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -1.6rem;
+      right: -1.6rem;
+      width: $h/2;
+      height: $borderW;
+      background: #fff;
+      border-radius: $h/10;
+      transform-origin: 100% 50%;
+      transform: rotate(225deg) translateX(3rem);
+      transition: width $step1 $delayClose2 + $step2;
+    }
+  }
+
+  &__input {
+    position: relative;
+    width: $w - $h;
+    height: $h;
+    padding: $h*0.15 0 $h*0.15 $h*0.4;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: $h*0.4;
+    color: #fff !important;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.2s;
+    
+    #trigger:checked ~ & {
+      opacity: 1;
+      z-index: auto;
+      transition: opacity 0.2s $totalAnim;
+    }
+  }
+  &__input::placeholder {
+    color: white;
+  } 
+  &__checkbox {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+    z-index: -10;
+  }
+  &__label-init {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: $w*0.41;
+    width: $w*0.2125;
+    height: $w*0.2;
+    cursor: pointer;
+
+    #trigger:checked ~ & {
+      transform: scale(0);
+    }
+  }
+  &__label-active {
+    z-index: 3;
+    position: absolute;
+    top: $h/4;
+    right: $h/4;
+    width: $h/2;
+    height: $h/2;
+    cursor: pointer;
+    transform: scale(0);
+    
+    #trigger:checked ~ & {
+      transition: transform 0 $totalAnim;
+      transform: scale(1);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: $h/4;
+    right: $h/4;
+    width: $h/2;
+    height: $h/2;
+    cursor: pointer;
+    z-index: -1;
+
+    #trigger:checked ~ & {
+      z-index: auto;
+
+      &:before {
+        transform: rotate(-45deg);
+        opacity: 1;
+        transition: transform 0.2s $totalAnim $cub, opacity 0.1s $totalAnim;
+      }
+      &:after {
+        transform: rotate(45deg);
+        opacity: 1;
+        transition: transform 0.2s ($totalAnim + $delayClose1) $cub, opacity 0.1s ($totalAnim + $delayClose1);
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: $h/5;
+      left: 0;
+      width: 100%;
+      height: $h/10;
+      background: #fff;
+      border-radius: 0.5rem;
+      opacity: 0;
+    }
+    &:before {
+      transform: rotate(-45deg) translateX(2rem);
+      transition: transform 0.2s, opacity 0.1s 0.1s;
+    }
+    &:after {
+      transform: rotate(45deg) translateX(2rem);
+      transition: transform 0.2s 0.2s, opacity 0.1s 0.3s;
+    }
+  }
+}
+
+.jobs-title-menu {
+  position: relative;
+  // background-color: white;
+  width: 80%;
+  left: 10%;
+  margin-top: 31rem;
+  height: 10rem;
+}
+.wan {
+  border-left: 1px solid rgba(128, 128, 128, 0.178) !important;
+}
+.col-md-2 > .active {
+  background-color: #fdab44!important;
+  color: white;
+}
+
+.col-md-2 > .active > a{
+  color: white !important;
+}
+
+.top-category {
+  
+  height: 15rem;
+  background-color: white;
+}
+.top-category:hover{
+  background-color: #206dfb ;
+  color: white !important;
+  .top-category > h3 > a{
+    color: white !important;
+  }
+}
+
+.top-category > h3 > a{
+  // color: black ;
+  text-decoration: none;
+}
+.col-md-2 >.active:hover{
+  background-color: #206dfb  !important;
+}
+.content {
+  margin-top: 20rem;
+}
+
+.top-job-category {
+  margin-top: 16rem;
+}
+
+.apply-btn {
+  margin-left: 10rem !important;
+}
+
+
+  
+
+  

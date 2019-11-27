@@ -1,0 +1,146 @@
+<section class="hero-wrap">
+  <div class="layer">
+    <nav class="navbar navbar-expand-lg navbar-light " id="navigation">
+    <a class="navbar-brand " href="#"><h2>XtraMiler</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 "> 
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Browse Jobs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Workers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn btn-primary post-j" href="#">Post a Job</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn want_job" href="#">Want a Job</a>
+        </li>
+        </ul>
+    
+    </div>
+    </nav>
+
+    <div class="text-light intro  animated slideInUp ">     
+        <span class="intro-content-1 d-flex justify-content-center ">Find Job, Employment, and Career Opportunities</span><br>
+
+        <span class="intro-content-2 d-flex justify-content-center ">The Eassiest Way to Get Your New Job</span>    
+    </div>
+    <div class="search animated slideInUp ">
+        <div class="search">
+            <input type="checkbox" id="trigger" class="search__checkbox" />
+            <label class="search__label-init" for="trigger"></label>
+            <label class="search__label-active" for="trigger"></label>
+            <div class="search__border"></div>
+            <input type="text" class="search__input " placeholder="Job title..."/>
+        <div class="search__close"></div>
+    </div>
+    
+    </div>
+    <div class="jobs-title-menu">
+        <section class="ftco-section ftco-no-pt ftco-no-pb">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="category-wrap">
+    					<div class="row no-gutters">
+    						<div class="col-md-2">
+    							<div class="top-category text-center no-border-left">
+    								<h3><a href="#" class='title'>Website &amp; Software</a></h3>
+    								<span class="icon flaticon-contact"></span>
+    								<p><span class="number">143</span> <span>Open position</span></p>
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category wan text-center active">
+    								<h3><a href="#">Education &amp; Training</a></h3>
+    								<span class="icon flaticon-mortarboard"></span>
+    								<p><span class="number">143</span> <span>Open position</span></p>
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category wan text-center">
+    								<h3><a href="#">Graphic &amp; UI/UX Design</a></h3>
+    								<span class="icon flaticon-idea"></span>
+    								<p><span class="number">143</span> <span>Open position</span></p>
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category wan text-center">
+    								<h3><a href="#">Accounting &amp; Finance</a></h3>
+    								<span class="icon flaticon-accounting"></span>
+    								<p><span class="number">143</span> <span>Open position</span></p>
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category wan text-center">
+    								<h3><a href="#">Restaurant &amp; Food</a></h3>
+    								<span class="icon flaticon-dish"></span>
+    								<p><span class="number">143</span> <span>Open position</span></p>
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category wan text-center">
+    								<h3><a href="#">Health &amp; Hospital</a></h3>
+    								<span class="icon flaticon-stethoscope"></span>
+    								<p><span class="number">143</span> <span>Open position</span></p>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    </div>
+</div>
+</section>
+<section>
+    <div class="container top-job-category">
+        <h3>Top Categories </h3>
+        <div class= "card-deck mt-3 mb-3 ml-5">
+        <% @jobs.each do |job| %>
+            <div  class="card" style="width:15rem;">
+                <div class="card-body">
+                    <h3><%=job.title%></h3>
+                    <p><%if job.title == 'Front-end Development'%>                      
+                        <%= Job.count(:title)%> Open positions
+                        <%elsif job.title == 'Software Developer'%>                      
+                        <%= Job.count(:title)%> open positions
+                      <%end%>
+                    </p>                    
+                </div>
+            </div>
+        <%end%>
+        </div>
+    </div>
+</section>
+  <div class="container mb-3">
+    <h3>Recently added jobs</h3>
+     <% @jobs.each do |job| %>
+    <div class="card mt-3" style="width:50rem;">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="ml-3"><%= job.job_type%></span>
+                <div class="card-body"> 
+                <%= job.title%>
+                </div>
+                <span class='ml-3'><%= job.company.email%> ,&nbsp;&nbsp;&nbsp;&nbsp;  <%= job.location%></span>
+            </div>
+            <div class="col-md-6">
+              <%= link_to  "Apply", new_request_path(job_id: job.id),method: :post ,class:'btn btn-primary btn-lg mt-4 apply-btn' %>
+            </div>
+        </div>
+    </div>
+    <%end%>
+  </div>
+<section>
+  
+</section>
