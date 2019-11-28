@@ -5,6 +5,8 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @requests= Request.all
+    @feedbacks = Feedback.all
   end
 
   # GET /jobs/1

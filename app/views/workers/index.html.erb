@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>My Profile</h3>
+    <% @workers.each do |worker|%>
+        <%if current_worker.id == worker.id%>
+        <%if worker.image.url.present?%>
+            <%=  image_tag(worker.image.url(:medium)) %><br>
+        <%else%>
+        <%end%>
+        Username: <%=worker.username%><br>
+        Email: <%=worker.email%><br>
+        Location: <%=worker.location%><br>
+        Skills: <%=worker.skills%><br>
+        Hour rate:<%=worker.hourly_rate%> /hr<br>
+        <%if worker.status.present?%>
+        Status: <%=worker.status%><br>
+        
+        <%else%>
+        Status: <%= 'Not hired'%><br>
+        <%end%>
+        Description: <%=worker.description%><br>
+        <%else%>
+        <%end%>
+    <%end%>
+    <%= link_to  "Back", requests_path, class:'btn btn-dark' %>
+</div>

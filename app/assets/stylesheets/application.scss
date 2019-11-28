@@ -123,6 +123,7 @@
       top: 0px;
       width: 100%;
       transition: padding 300ms ease;
+      z-index: 1;
     }
     
 
@@ -379,6 +380,40 @@ $borderW: 0.3rem;
   margin-left: 10rem !important;
 }
 
+.vertical-menu {
+  width: 200px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #a16ae8;
+  color: white;
+}
+
+.float{
+	position:fixed;
+	width:160px;
+	height:200px;
+	bottom: 5%;
+	// right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	// border-radius:50px;
+	text-align:center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1;
+}
 
   
 

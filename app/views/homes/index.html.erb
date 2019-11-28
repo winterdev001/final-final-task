@@ -18,11 +18,18 @@
             <a class="nav-link" href="#">Workers</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link btn btn-primary post-j" href="#">Post a Job</a>
+            <%= link_to 'Post a Job', new_job_path, class:'nav-link btn btn-primary post-j '%>
         </li>
         <li class="nav-item">
             <a class="nav-link btn want_job" href="#">Want a Job</a>
         </li>
+        <li class="nav-item">
+            <%= link_to 'Worker', new_worker_session_path, class:'btn btn-dark nav-link mr-2'%>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Company', new_company_session_path, class:'btn btn-dark nav-link '%>
+        </li>
+        
         </ul>
     
     </div>
