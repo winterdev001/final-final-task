@@ -18,9 +18,9 @@
   <thead>
     <tr>
       <th>Content</th>
-      
-      <th>Worker</th>
-      <th>Company</th>
+      <th>Job</th>
+      <th>Company Name</th>
+      <th>Company Email</th>
       <th>Feedback</th>
       <th colspan="3"></th>
     </tr>
@@ -31,17 +31,20 @@
     <%if request.worker_id == current_worker.id%>      
       <tr>      
         <td><%= link_to 'Cv',request.content %></td>
+        <td><% Job.all.each do |job|%>
+              <%if request.job_id == job.id%>
+              <%= job.title%>
+              <%else%>
+              <%end%>
+            <%end%>
+        </td> 
         
-        
-        <td><%= request.worker.email %></td>
-        <td><%= request.company.email %></td>
-       
+        <td><%= request.company.username %></td>
+        <td><%= request.company.email %></td>       
         <td>
         <% @feedbacks.each do |feed|%>
           <%if feed.request_id == request.id%>
-            <%= feed.response %>
-            <%else%>
-            No response yet...
+            <%= feed.response %>           
             <%end%>                   
         <%end%>
         </td>

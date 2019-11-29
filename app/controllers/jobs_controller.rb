@@ -7,6 +7,7 @@ class JobsController < ApplicationController
     @jobs = Job.all
     @requests= Request.all
     @feedbacks = Feedback.all
+    @transactions = Transaction.all
   end
 
   # GET /jobs/1

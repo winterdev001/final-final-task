@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # get'applications/new'
   match  'requests/new', via: :post
   match  'feedbacks/new', via: :post
+  match  'transactions/new', via: :post
   devise_for :companies
   devise_for :workers
   root 'homes#index'

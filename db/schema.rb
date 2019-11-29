@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_164557) do
+ActiveRecord::Schema.define(version: 2019_11_29_080929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,9 @@ ActiveRecord::Schema.define(version: 2019_11_28_164557) do
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.string "attachment"
+    t.bigint "job_id"
     t.index ["company_id"], name: "index_requests_on_company_id"
+    t.index ["job_id"], name: "index_requests_on_job_id"
     t.index ["worker_id"], name: "index_requests_on_worker_id"
   end
 
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_164557) do
   add_foreign_key "feedbacks", "requests", on_delete: :cascade
   add_foreign_key "jobs", "companies"
   add_foreign_key "requests", "companies", on_delete: :cascade
+  add_foreign_key "requests", "jobs"
   add_foreign_key "requests", "workers", on_delete: :cascade
   add_foreign_key "transactions", "companies"
   add_foreign_key "transactions", "jobs"
