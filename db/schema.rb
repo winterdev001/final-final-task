@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_160726) do
+ActiveRecord::Schema.define(version: 2019_11_29_080929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,23 @@ ActiveRecord::Schema.define(version: 2019_11_27_160726) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "location"
+    t.string "description"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_companies_on_email", unique: true
     t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "response"
+    t.bigint "request_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_feedbacks_on_request_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -55,7 +70,9 @@ ActiveRecord::Schema.define(version: 2019_11_27_160726) do
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.string "attachment"
+    t.bigint "job_id"
     t.index ["company_id"], name: "index_requests_on_company_id"
+    t.index ["job_id"], name: "index_requests_on_job_id"
     t.index ["worker_id"], name: "index_requests_on_worker_id"
   end
 
@@ -78,13 +95,25 @@ ActiveRecord::Schema.define(version: 2019_11_27_160726) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "location"
+    t.string "skills"
+    t.integer "hourly_rate"
+    t.string "status"
+    t.string "description"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "feedbacks", "requests", on_delete: :cascade
   add_foreign_key "jobs", "companies"
-  add_foreign_key "requests", "companies"
-  add_foreign_key "requests", "workers"
+  add_foreign_key "requests", "companies", on_delete: :cascade
+  add_foreign_key "requests", "jobs"
+  add_foreign_key "requests", "workers", on_delete: :cascade
   add_foreign_key "transactions", "companies"
   add_foreign_key "transactions", "jobs"
   add_foreign_key "transactions", "workers"

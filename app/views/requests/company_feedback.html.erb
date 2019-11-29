@@ -1,0 +1,40 @@
+<%= form_with(model: @request, local: true,html: { multipart: true }) do |form| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%=@request.each do |req|%>
+   <%if req.id == @requests%>
+  <div class="field">
+    <%= form.label 'Feedback'%><br>
+    <%= form.hidden_field :content,value:req.content %>
+  </div>
+  <div class="field">
+    <%= form.label 'Feedback'%><br>
+    <%= form.text_field :feedback,placeholder:'Enter your reply here' %>
+  </div>
+  
+  <div class="field">   
+    <%= form.hidden_field   :worker_id , value:req.worker_id%>
+  </div>
+
+  <div class="field">   
+    <%= form.hidden_field  :company_id , value:current_company.id %>    
+  </div>
+
+  <%end%>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  
+<% end %>

@@ -1,2 +1,29 @@
-<h1>Transactions#_form</h1>
-<p>Find me in app/views/transactions/_form.html.erb</p>
+<%= form_with(model: transaction, local: true) do |form| %>
+  <% if transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :company_id , value: @company_id%>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :worker_id , value: @worker_id%>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :job_id , value: @job_id%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
