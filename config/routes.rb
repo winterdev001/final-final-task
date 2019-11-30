@@ -1,6 +1,20 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
  
+  resources :admins 
+  # match '/user', to: 'admins#all_user', via: :post
+  match 'user' => 'admins#all_user', via: :get
+      
  
+  # resources :sessions
+  # resources :users
+  # get 'users#index'
+  # get 'admins/user' => 'admins#user'
+  devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  # match  'users/dashboard', via: :post
+  # get 'users#dashboard'
   # get'applications/new'
   match  'requests/new', via: :post
   match  'feedbacks/new', via: :post

@@ -29,6 +29,14 @@
         <li class="nav-item">
             <%= link_to 'Company', new_company_session_path, class:'btn btn-dark nav-link '%>
         </li>
+      
+        <% if user_signed_in?%>
+        <li class="nav-item">
+            <%= link_to 'User Logout', destroy_user_session_path, class:'btn btn-dark nav-link '%>
+        </li>
+        <%else%>
+        <%end%> 
+
         
         </ul>
     
@@ -149,5 +157,7 @@
     <%end%>
   </div>
 <section>
-  
+  <%Worker.all.each do |worker|%>
+   <%= worker.email%>
+  <%end%>
 </section>

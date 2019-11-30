@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+ .nav-nav {
+  margin-top: 4.5rem;
+  background-color: #e5e5e5 !important;
+  width: 74% !important;
+  box-shadow: none!important;
+  background-origin: none!important;  
+ }
+
+ .tab-tab {
+  margin-top: 6rem !important;
+ }
+
+ .bg-main {
+   background-color: #f2f2f2!important;
+ }
  .want_job {
    background-color: #fdab44 !important;
  }
@@ -342,21 +357,32 @@ $borderW: 0.3rem;
 .col-md-2 > .active {
   background-color: #fdab44!important;
   color: white;
+  h3 > a{
+    color: white !important;
+  }
+  
+}
+
+.col-md-2 > .active:hover {
+  background-color: #206dfb;
 }
 
 .col-md-2 > .active > a{
   color: white !important;
 }
 
-.top-category {
-  
+.top-category {  
   height: 15rem;
   background-color: white;
+  h3 > a{
+    color: black !important;
+  }
 }
+
 .top-category:hover{
   background-color: #206dfb ;
   color: white !important;
-  .top-category > h3 > a{
+   h3 > a{
     color: white !important;
   }
 }
