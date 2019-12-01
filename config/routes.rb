@@ -1,5 +1,5 @@
 Rails.application.routes.draw do 
- 
+  root 'homes#index'
   # get 'websitecats/index'
   resources :websitecats
   devise_for :administrators
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   match  'transactions/new', via: :post
   devise_for :companies
   devise_for :workers
-  root 'homes#index'
+  
   resources :companies
   resources :requests
   resources :jobs
