@@ -1,6 +1,8 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
  
- 
+  devise_for :administrators
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   # get'applications/new'
   match  'requests/new', via: :post
   match  'feedbacks/new', via: :post
