@@ -1,7 +1,13 @@
 Rails.application.routes.draw do 
+  
   root 'homes#index'
   # get 'websitecats/index'
   resources :websitecats
+  resources :contents
+  resources :finances
+  resources :graphics 
+  resources :architects
+  resources :trainings
   devise_for :administrators
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
   match  'transactions/new', via: :post
   devise_for :companies
   devise_for :workers
-  
+  resources :workers  
   resources :companies
   resources :requests
   resources :jobs

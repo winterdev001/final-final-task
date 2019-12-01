@@ -1,0 +1,21 @@
+<body class="bg-main ">
+    <div class="d-flex justify-content-center job-show">
+        <p id="notice"><%= notice %></p>
+        <div class="card mb-3" style="width:50rem;">
+            <h3 class="card-header text-center">Editing Job</h3>
+            <div class="card-body">             
+
+                <%= render 'form', job: @job %>
+                <%= link_to 'Back', jobs_path , class:'btn btn-light'%>
+               
+                <!--<div class="text-center">
+                    <%if current_company%>
+                    <%= link_to 'Show', @job , class:'btn btn-primary '%> 
+                    <%else%>
+                    <%end%>
+                    <%= link_to 'Back', jobs_path , class:'btn btn-light'%>
+                </div>-->
+            </div>
+        </div>
+    </div>  
+</body>

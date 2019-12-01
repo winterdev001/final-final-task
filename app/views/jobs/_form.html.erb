@@ -10,38 +10,51 @@
   <% end %>
 
   <div class="form-group">
-  <label>Job Title</label><br>
-    <%= form.text_field :title , placeholder:"Eg.Frontend development", class: "form-control input" %>
+    <div class="row">
+      <div class="col-md-4">
+        <label>Job Title</label><br>
+        <%= form.select :title, options_for_title, prompt: 'Select One' , class:'custom-select select' %>
+      </div>
+      <div class="col-md-8">
+        <label>Deadline</label><br>
+        <%= form.date_field :deadline, as: :date, value: form.object.try(:strftime,"%d/%m/%Y"),placeholder:"Deadline", class: "form-control" %>
+      </div>
+    </div>
   </div>    
+ 
   <div class="form-group">
-    <label>Deadline</label><br>
-    <%= form.date_field :deadline, as: :date, value: form.object.try(:strftime,"%d/%m/%Y"),placeholder:"Deadline", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label>Amount</label><br>
-    <%= form.text_field :amount ,placeholder:"Eg.30$", class: "form-control input" %>
-  </div>
-  
-  <div class="form-group">
-    <label>Location</label><br>
-    <%= form.text_field :location ,placeholder:"Eg.Kicukiro ,Rwanda", class: "form-control input" %>
-  </div>
+    <div class="row">
+      <div class="col-md-4">
+        <label>Amount</label><br>
+        <%= form.text_field :amount ,placeholder:"Eg.30$", class: "form-control input" %>
+      </div>
+      <div class="col-md-8">
+        <label>Location</label><br>
+        <%= form.text_field :location ,placeholder:"Eg.Kicukiro ,Rwanda", class: "form-control input" %>
+      </div>
+    </div>    
+  </div>  
   
   <div class="form-group ">
-    <b>Job Type</b><br />
-    <%= form.radio_button :job_type, 'fulltime' %> Full Time
-    <%= form.radio_button :job_type, 'parttime' %> Part Time
-    <%= form.radio_button :job_type, 'finished' %> Freelance
-    <%= form.radio_button :job_type, 'temporaly' %> Temporaly<br />
+  <div class="row">
+      <div class="col-md-6">
+        <b>Job Type</b><br />
+        <%= form.radio_button :job_type, 'fulltime' %> Full Time
+        <%= form.radio_button :job_type, 'parttime' %> Part Time<br>
+        <%= form.radio_button :job_type, 'finished' %> Freelance
+        <%= form.radio_button :job_type, 'temporaly' %> Temporaly<br />
+      </div>
+      <div class="col-md-6">
+        <b>Working Condition</b><br />   
+        <%= form.radio_button :remote, '2' %> Online<br>
+        <%= form.radio_button :remote, '1' %> Remote<br />
+      </div>
+    </div>      
   </div>
-  <div class="form-group">
-    <b>Working Condition</b><br />   
-    <%= form.radio_button :remote, '2' %> Online
-    <%= form.radio_button :remote, '1' %> Remote<br />
-  </div> 
+  
   <div class="form-group">
   <label>Description</label><br>
-    <%= form.text_field :description , placeholder:"Description....", class: "form-control input" %>
+    <%= form.text_area :description , placeholder:"Description....", class: "form-control input" %>
   </div>
   <div class="field">  
     <%= form.hidden_field :company_id , value:current_company.id %>
@@ -49,7 +62,6 @@
   <hr>  
   <div class="actions text-center">
     <%= form.submit  class:"btn btn-dark  "  %>     
-    <%= link_to 'Back', jobs_path, class:"btn btn-dark  "%>     
   </div>
 <% end %>
    

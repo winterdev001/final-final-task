@@ -1,49 +1,60 @@
-<p id="notice"><%= notice %></p>
+<body class="bg-main ">
+  <div class="d-flex justify-content-center job-show">
+    <p id="notice"><%= notice %></p>
+    <div class="card" style="width:50rem;">
+      <div class="card-body">
+        <p>
+          <strong>Title:</strong>
+          <%= @job.title %>
+        </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
+        <p>
+          <strong>Deadline:</strong>
+          <%= @job.deadline %>
+        </p>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @job.deadline %>
-</p>
+        <p>
+          <strong>Amount:</strong>
+          <%= @job.amount %>
+        </p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @job.amount %>
-</p>
+        <p>
+          <strong>Status:</strong>
+          <%= @job.status %>
+        </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @job.status %>
-</p>
+        <p>
+          <strong>Type:</strong>
+          <%= @job.job_type %>
+        </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @job.job_type %>
-</p>
+        <p>
+          <strong>Location:</strong>
+          <%= @job.location %>
+        </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @job.location %>
-</p>
+        <p>
+          <strong>Remote:</strong>
+          <%= @job.remote %>
+        </p>
 
-<p>
-  <strong>Remote:</strong>
-  <%= @job.remote %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @job.description %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @job.company %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+        <p>
+          <strong>Company:</strong>
+          <%= @job.company.email%>
+        </p>
+        <div class="text-center">
+        <%if current_company%>
+          <%= link_to 'Edit', edit_job_path(@job) , class:'btn btn-primary ' %> 
+        <%else%>
+        <%end%>
+        <%= link_to 'Back', jobs_path , class:'btn btn-light'%>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>

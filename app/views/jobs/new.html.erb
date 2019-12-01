@@ -1,5 +1,14 @@
-<h1>New Job</h1>
+<body class="bg-main ">
+    <div class="d-flex justify-content-center job-show">
+        <p id="notice"><%= notice %></p>
+        <div class="card mb-3" style="width:50rem;">
+            <h3 class="card-header text-center">New Job</h3>
+            <div class="card-body">           
 
-<%= render 'form', job: @job %>
-
-<%= link_to 'Back', companies_path %>
+                <%= render 'form', job: @job %>
+                <%= link_to 'Home', root_path , class:'btn btn-light'%>              
+              
+            </div>
+        </div>
+    </div>  
+</body>

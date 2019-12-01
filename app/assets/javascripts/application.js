@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 750){
+    if ($(this).scrollTop() > 570){
     $('.navbar').addClass('sticky');
     $('.nav-link').addClass('changed-links');
     $('.post-j').addClass('post-job');

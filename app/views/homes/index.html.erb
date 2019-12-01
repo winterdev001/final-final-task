@@ -5,23 +5,23 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 "> 
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item active">  
+            <%= link_to 'Home',root_path, class:'nav-link'%>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/jobs">Browse Jobs</a>
+            <a class=" nav-link" href="/jobs">Browse Jobs</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Workers</a>
+            <a class="nav-link" href="/workers">Workers</a>
         </li>
         <li class="nav-item">
             <%= link_to 'Post a Job', new_job_path, class:'nav-link btn btn-primary post-j '%>
         </li>
         <li class="nav-item">
-            <a class="nav-link btn want_job" href="#">Want a Job</a>
+            <a class="nav-link btn want_job" href="/jobs">Want a Job</a>
         </li>
         <li class="nav-item">
             <%= link_to 'Worker', new_worker_session_path, class:'btn btn-dark nav-link mr-2'%>
@@ -66,43 +66,53 @@
                 </div>
             </div>   
             </a>
-            <div  class=" h-100  job-cat-card ml-2 animated slideInUp " >
-                <%= image_tag  "uidesign.svg" , class:'card-img-top job-cat-img '%>
-                <div class="card-body">
-                    <h4>Graphic & UI/UX Design</h4>                
-                    </p>                    
-                </div>
-            </div> 
-            <div  class=" h-100  job-cat-card ml-2 animated slideInUp " >
-                <%= image_tag  "training.svg" , class:'card-img-top job-cat-img creator'%>
-                <div class="card-body">
-                    <h4>Education & Training</h4>                
-                    </p>                    
-                </div>
-            </div> 
-            <div  class=" h-100  job-cat-card ml-2 " >
-                <%= image_tag  "finace.png" , class:'card-img-top job-cat-img '%>
-                <div class="card-body">
-                    <h4>Accounting & Finance</h4>                
-                    </p>                    
-                </div>
-            </div> 
-            <div  class=" h-100  job-cat-card ml-2" >
-                <%= image_tag  "architect.svg" , class:'card-img-top job-cat-img creator'%>
-                <div class="card-body">
-                    <h4>Engineering & Architecture</h4>                
-                    </p>                    
-                </div>
-            </div> 
-            <div  class="card creator-card  h-100  job-cat-card ml-2 " >
-                <div class="text-center">
-                <%= image_tag  "creator1.png" , class:'card-img-top  creator'%>
-                </div>
-                <div class="card-body">
-                    <h4 class="text-center">Content Creator</h4>                
-                                     
-                </div>
-            </div>      
+            <a href="/graphics" class="text-decoration-none text-dark">   
+                <div  class=" h-100  job-cat-card ml-2 animated slideInUp " >
+                    <%= image_tag  "uidesign.svg" , class:'card-img-top job-cat-img '%>
+                    <div class="card-body">
+                        <h4>Graphic & UI/UX Design</h4>                
+                        </p>                    
+                    </div>
+                </div> 
+            </a> 
+            <a href="/trainings" class="text-decoration-none text-dark">   
+                <div  class=" h-100  job-cat-card ml-2 animated slideInUp " >
+                    <%= image_tag  "training.svg" , class:'card-img-top job-cat-img creator'%>
+                    <div class="card-body">
+                        <h4>Education & Training</h4>                
+                        </p>                    
+                    </div>
+                </div> 
+            </a> 
+            <a href="/finances" class="text-decoration-none text-dark">   
+                <div  class=" h-100  job-cat-card ml-2 " >
+                    <%= image_tag  "finace.png" , class:'card-img-top job-cat-img '%>
+                    <div class="card-body">
+                        <h4>Accounting & Finance</h4>                
+                        </p>                    
+                    </div>
+                </div> 
+            </a> 
+            <a href="/architects" class="text-decoration-none text-dark">   
+                <div  class=" h-100  job-cat-card ml-2" >
+                    <%= image_tag  "architect.svg" , class:'card-img-top job-cat-img creator'%>
+                    <div class="card-body">
+                        <h4>Engineering & Architecture</h4>                
+                        </p>                    
+                    </div>
+                </div> 
+            </a> 
+            <a href="/contents" class="text-decoration-none text-dark">   
+                <div  class="card creator-card  h-100  job-cat-card ml-2 " >
+                    <div class="text-center">
+                    <%= image_tag  "creator1.png" , class:'card-img-top  creator'%>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-center">Content Creator</h4>                
+                                        
+                    </div>
+                </div>   
+            </a>   
         </div>
     </div>
 </section>
