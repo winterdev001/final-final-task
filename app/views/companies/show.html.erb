@@ -1,2 +1,29 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+<%if company.image.url.present?%>
+            <%=  image_tag(company.image.url(:medium)) %><br>
+        <%else%>
+        <%end%>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @company.email %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @company.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

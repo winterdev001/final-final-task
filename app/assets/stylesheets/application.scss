@@ -373,7 +373,7 @@ $borderW: 0.3rem;
 }
 
 .top-job-category {
-  margin-top: 16rem;
+  margin-top: 5rem;
 }
 
 .apply-btn {
@@ -415,6 +415,22 @@ $borderW: 0.3rem;
   z-index: 1;
 }
 
-  
+.apply-card:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 3px 13px 0 rgba(0, 0, 0, 0.562);
+}
+
+.bg-main {
+  background-color: #a16ae8b0;
+}
+
+.text-main {
+  color: #a16ae8b0;
+}
+
+
+// .footer-footer {
+//   height: 50px !important;
+// }
 
   

@@ -15,4 +15,7 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:account_update, keys: [:username, :email, :password, :current_password,:location,:location,:description,:image])
 
     end
+    def after_sign_in_path_for(companies)
+        stored_location_for(companies) || jobs_path
+      end
 end

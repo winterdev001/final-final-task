@@ -1,5 +1,7 @@
 Rails.application.routes.draw do 
  
+  # get 'websitecats/index'
+  resources :websitecats
   devise_for :administrators
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   devise_for :companies
   devise_for :workers
   root 'homes#index'
+  resources :companies
   resources :requests
   resources :jobs
   resources :transactions

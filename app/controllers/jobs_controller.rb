@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy,:web]
   before_action :authenticate_company!
   # GET /jobs
   # GET /jobs.json
@@ -15,6 +15,9 @@ class JobsController < ApplicationController
   def show
   end
 
+  def web
+    @jobs = Job.where(:title =>'software development').all
+  end
   # GET /jobs/new
   def new
     @job = Job.new
