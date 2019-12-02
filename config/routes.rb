@@ -15,10 +15,12 @@ Rails.application.routes.draw do
   match  'requests/new', via: :post
   match  'feedbacks/new', via: :post
   match  'transactions/new', via: :post
-  devise_for :companies
+  devise_for :companies 
   devise_for :workers
   resources :workers  
-  resources :companies
+  resources :companies do
+    resources :comments
+  end
   resources :requests
   resources :jobs
   resources :transactions

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_01_051321) do
+ActiveRecord::Schema.define(version: 2019_12_02_103734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2019_12_01_051321) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_administrators_on_email", unique: true
     t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "company_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "worker_id"
+    t.index ["company_id"], name: "index_comments_on_company_id"
+    t.index ["worker_id"], name: "index_comments_on_worker_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -135,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_12_01_051321) do
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "companies"
   add_foreign_key "feedbacks", "requests", on_delete: :cascade
   add_foreign_key "jobs", "companies"
   add_foreign_key "requests", "companies", on_delete: :cascade

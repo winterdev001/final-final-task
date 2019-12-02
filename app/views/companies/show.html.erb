@@ -1,29 +1,18 @@
-
-<p id="notice"><%= notice %></p>
-<%if company.image.url.present?%>
-            <%=  image_tag(company.image.url(:medium)) %><br>
-        <%else%>
-        <%end%>
-
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @company.email %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @company.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @company.description %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<body class="bg-main ">
+    <div class="d-flex justify-content-center job-show">
+        <div class="card mb-3" style="width:50rem;">
+            <h3 class="card-header text-center">Job Application Request</h3>
+            <div class="card-body">                   
+                  <div class="comment-section">
+                    <%= render partial: 'comments/form', locals: {comment: @comment, company: @company}%>
+                    <p>All comments </p>
+                    <div id='comments_area'>
+                      <%= render  partial:"comments/index", locals:{comments:@comments,company:@company} %>
+                    </div>
+                    
+                  </div>
+                  <%= link_to 'Back', companies_path, class:'btn btn-light' %>                           
+            </div>
+        </div>
+    </div>  
+</body>

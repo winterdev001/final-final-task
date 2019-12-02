@@ -1,0 +1,15 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comments > li {
+    display: block;
+}
+
+.comment-content {
+    border-left:4px solid darkviolet !important;
+    background-color: rgba(148, 0, 211, 0.096) !important;
+}
+
+.comment-btn {
+    margin-top: 2.5rem;
+}

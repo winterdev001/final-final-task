@@ -13,9 +13,9 @@
 
   
   
-  <div class="field">
-    <%= form.label 'Cv Link'%><br>
-    <%= form.text_field :content,placeholder:'Enter your Cv link here' %>
+  <div class="form-group">
+    <%= form.label 'Enter you Cv Link'%><br>
+    <%= form.text_field :content,placeholder:'Enter your Cv link here', class:'form-control' %>
   </div>
  
   <div class="field">   
@@ -29,8 +29,8 @@
     <%= form.hidden_field  :job_id , value:@job_id %>    
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit class:'btn btn-primary'%>
   </div>
 
   

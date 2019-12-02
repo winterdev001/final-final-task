@@ -1,0 +1,6 @@
+<div class="container">
+    <%= form_for([@company, @comment],remote: true) do |f| %>
+        <%= f.text_area :content, class:'form-control'%>
+        <%= f.submit 'Recomment', class:'btn btn-primary'%>
+    <% end %>
+</div>

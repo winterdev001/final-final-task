@@ -13,17 +13,21 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery/dist/jquery.js
 //= require_tree .
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 570){
-    $('.navbar').addClass('sticky');
-    $('.nav-link').addClass('changed-links');
-    $('.post-j').addClass('post-job');
-    $('.navbar-brand').addClass('brand');
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 570) {
+        $('.navbar').addClass('sticky');
+        $('.nav-link').addClass('changed-links');
+        $('.post-j').addClass('post-job');
+        $('.navbar-brand').addClass('brand');
     }
-    else{
-    $('.navbar').removeClass('sticky');
-    $('.nav-link').removeClass('changed-links');
-    $('.post-j').removeClass('post-job');
-    $('.navbar-brand').removeClass('brand');
-    }});
+    else {
+        $('.navbar').removeClass('sticky');
+        $('.nav-link').removeClass('changed-links');
+        $('.post-j').removeClass('post-job');
+        $('.navbar-brand').removeClass('brand');
+    }
+});
+
+

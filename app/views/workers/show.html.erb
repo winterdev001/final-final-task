@@ -50,11 +50,11 @@
         </div>
       
         <div class="text-center">
-        <%if current_worker%>
-          <%= link_to 'Edit', edit_job_path(@worker) , class:'btn btn-primary ' %> 
-        <%else%>
-        <%end%>
-        <%= link_to 'Get in Touch', workers_path , class:'btn btn-primary'%>
+       
+        <%if current_company%>
+        <%= link_to 'Get in Touch', company_path(current_company.id,worker_id:@worker.id)  , class:'btn btn-primary'%>
+      
+         <%end%>
         <%= link_to 'Back', workers_path , class:'btn btn-light'%>
         </div>
       </div>

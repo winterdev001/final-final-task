@@ -1,0 +1,16 @@
+<ul class="comments">
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <li>
+        <div class="text-dark">
+          <%= comment.content %>  
+          <%if current_company%>
+              <%= link_to 'Edit', edit_company_comment_path(comment.company, comment)%>
+          <%end%>
+          <%= link_to 'Edit', edit_company_comment_path(comment.company, comment)%>
+          <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,5 +1,12 @@
-<h1>New Transaction</h1>
-
-<%= render 'form', transaction: @transaction %>
-
-<%= link_to 'Back', transactions_path %>
+<body class="bg-main ">
+    <div class="d-flex justify-content-center job-show">
+        <div class="card mb-3" style="width:30rem;">
+            <h3 class="card-header text-center">New Transaction</h3>
+            <div class="card-body">  
+                  <%= render 'form', transaction: @transaction %>
+                  <%= link_to 'Back', :back, class:'btn btn-light' %>
+                  <%= link_to 'Home', root_path , class:'btn btn-light'%>   
+            </div>
+        </div>
+    </div>  
+</body>

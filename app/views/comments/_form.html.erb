@@ -1,0 +1,26 @@
+<%= form_with(model: [company, comment],remote: true)   do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-9">
+        <%= form.label :content %>
+          <%= form.text_area :content, class:'form-control'%>
+          <%= form.hidden_field :worker_id,value:@worker_id  %>
+        </div >
+        <div class="col-md-3 ">
+          <%= form.submit 'Comment', class:'btn btn-primary comment-btn' %>
+        </div>
+      </div>
+  </div>
+  
+<% end %>

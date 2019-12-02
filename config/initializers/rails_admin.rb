@@ -10,8 +10,13 @@ RailsAdmin.config do |config|
       alert =  'Oops,Only authorized systeme administrator can access this page, Login to continue.'
     # end
   end
-  # config.current_user_method(&:current_user)
+  config.current_user_method(&:current_user)
 
+  # config.navigation_static_links = {
+  #   'Logout' => destroy_administrator_session_path
+  # }
+   
+  
   ## == CancanCan ==
   # config.authorize_with :cancancan
 
